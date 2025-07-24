@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeFlow Editor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <label class="theme-switch">
+                <input type="checkbox" id="themeToggle">
+                <span>🌙Dark Mode</span>
+            </label>
+
+            <div class="logo">
+                <i class="fas fa-code"></i>
+                <h1>CodeFlow Editor</h1>
+            </div>
+
+            <div class="file-controls">
+                <button id="new-file" class="btn" title="New File">
+                    <i class="fas fa-file"></i>
+                </button>
+                <button id="save-file" class="btn btn-primary" title="Save File">
+                    <i class="fas fa-save"></i>
+                </button>
+                <input type="file" id="file-input" accept=".html,.css,.js" style="display: none;">
+                <button id="open-file" class="btn" title="Open File">
+                    <i class="fas fa-folder-open"></i>
+                </button>
+                <button id="download-file" class="btn" title="Download">
+                    <i class="fas fa-download"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="editor-container">
+            <div class="editor-tabs">
+                <div class="tab active" data-language="html">HTML</div>
+                <div class="tab" data-language="css">CSS</div>
+                <div class="tab" data-language="js">JavaScript</div>
+                <div class="tab view-tab" data-language="preview">Preview</div>
+            </div>
+
+            <div class="editor-section">
+                <div class="code-editor" id="html-editor"></div>
+                <div class="code-editor" id="css-editor" style="display: none;"></div>
+                <div class="code-editor" id="js-editor" style="display: none;"></div>
+                <iframe id="preview-frame" style="display: none;"></iframe>
+            </div>
+        </div>
+
+        <div id="file-name-input" class="modal">
+            <div class="modal-content">
+                <h3>Save File As</h3>
+                <input type="text" id="fileName" placeholder="Filename (without extension)">
+                <select id="fileType">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                </select>
+                <div class="modal-actions">
+                    <button id="save-confirm" class="btn btn-primary">Save</button>
+                    <button id="save-cancel" class="btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

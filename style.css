@@ -1,0 +1,276 @@
+:root {
+    --primary-color: #4a6ee0;
+    --secondary-color: #3a5bd9;
+    --dark-color: #1e293b;
+    --light-color: #f1f5f9;
+    --border-color: #cbd5e1;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: var(--dark-color);
+}
+
+body.dark-mode {
+    background-color: #0f172a;
+    color: var(--light-color);
+}
+
+body.dark-mode .app-header {
+    background-color: #1e293b;
+    border-bottom-color: #334155;
+    box-shadow: none;
+}
+
+body.dark-mode .btn {
+    background-color: #1e293b;
+    color: var(--light-color);
+    border-color: #334155;
+}
+
+body.dark-mode .btn:hover {
+    background-color: #334155;
+}
+
+body.dark-mode .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+body.dark-mode .editor-tabs {
+    background-color: #1e293b;
+    border-bottom-color: #334155;
+}
+
+body.dark-mode .tab {
+    color: var(--light-color);
+}
+
+body.dark-mode .tab:hover {
+    background-color: #334155;
+}
+
+body.dark-mode .tab.active {
+    border-bottom-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+body.dark-mode #preview-frame {
+    background-color: #1e293b;
+}
+
+body.dark-mode .modal-content {
+    background-color: #1e293b;
+    color: var(--light-color);
+}
+
+body.dark-mode .modal input,
+body.dark-mode .modal select {
+    background-color: #0f172a;
+    color: var(--light-color);
+    border-color: #334155;
+}
+
+body.dark-mode .view-tab {
+    background-color: white;
+    color: black;
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--dark-color);
+    cursor: pointer;
+}
+
+body.dark-mode .theme-switch {
+    color: var(--light-color);
+}
+
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-header {
+    background-color: white;
+    padding: 0.8rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.file-controls {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.btn {
+    background-color: white;
+    color: var(--dark-color);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    background-color: #f1f5f9;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.editor-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.editor-tabs {
+    display: flex;
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    background-color: #f1f5f9;
+}
+
+.tab.active {
+    border-bottom: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.view-tab {
+    margin-left: auto;
+    background-color: #f1f5f9;
+}
+
+.editor-section {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.code-editor {
+    height: 100%;
+    width: 100%;
+}
+
+#preview-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    width: 400px;
+    max-width: 90%;
+}
+
+.modal h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.modal input,
+.modal select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .app-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .file-controls {
+        width: 100%;
+        justify-content: center;
+    }
+}
